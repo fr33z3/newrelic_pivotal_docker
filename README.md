@@ -1,6 +1,6 @@
-# Pivotal Plugins for New Relic
+<wbr># Pivotal Plugins for New Relic
 
-This README describes how to install and configure the Pivotal Plugins for New Relic.  For convenenience, the procedure installs all plugins at once. 
+This README describes how to install and configure the Pivotal Plugins for New Relic.  For convenenience, the procedure installs all plugins at once.
 
 This procedure installs plugins that gather metrics about the following products and displays them in your New Relic dashboard:
 
@@ -16,7 +16,7 @@ This procedure installs plugins that gather metrics about the following products
 
 ## Before You Begin
 
-* Ensure that Ruby (version 1.9.1 or later if using the RabbitMQ Plugin) is installed on the computer on which you will install the Pivotal Plugins for New Relic.  
+* Ensure that Ruby (version 1.9.1 or later if using the RabbitMQ Plugin) is installed on the computer on which you will install the Pivotal Plugins for New Relic.
 * Install the `bundle` Ruby gem.
 * Ensure that the computer on which you are installing the Pivotal plugins has network access to the computer on which the desired product to be monitored (such as RabbitMQ) is installed, or that both are installed on the same computer.
 * For RabbitMQ Monitoring: Enable the RabbitMQ management plugins by executing the `rabbitmq-plugins enable rabbitmq_management` command.  See [Management Plugins](http://www.rabbitmq.com/management.html).
@@ -30,9 +30,9 @@ This procedure installs plugins that gather metrics about the following products
 
 3. In the `config` directory, make a copy of the `template_newrelic_plugin.yml` file and name it `newrelic_plugin.yml`
 
-4. Edit `config/newrelic_plugin.yml` and replace the string YOUR_LICENSE_KEY_HERE with your [New Relic license key](https://newrelic.com/docs/subscriptions/license-key).   
+4. Edit `config/newrelic_plugin.yml` and replace the string YOUR_LICENSE_KEY_HERE with your [New Relic license key](https://newrelic.com/docs/subscriptions/license-key).
 
-5. **If you are installing the RabbitMQ plugin**: In the same `config/newrelic_plugin.yml` file, set the `rabbitmq:management_api_url` property to your RabbitMQ management URL.  The configuration file contains examples which are commented out. Different RabbitMQ version use different ports. 
+5. **If you are installing the RabbitMQ plugin**: In the same `config/newrelic_plugin.yml` file, set the `rabbitmq:management_api_url` property to your RabbitMQ management URL.  The configuration file contains examples which are commented out. Different RabbitMQ version use different ports.
 
 6. **If you are installing the vFabric Web Server plugin**: In the `config/newrelic_plugin.yml` file, set the configuration properties for your Web Server instances, such as the host and port to which they are listening. The template shows how to configure multiple Web server instances.
 
@@ -42,7 +42,7 @@ This procedure installs plugins that gather metrics about the following products
 
 9. Be sure to comment out configuration information for plugins that you are not installing from the `config/newrelic_plugin.yml` file.
 
-10. From the top-level directory, run the following commands: 
+10. From the top-level directory, run the following commands:
 
         $ bundle install
         $ ./pivotal_agent
