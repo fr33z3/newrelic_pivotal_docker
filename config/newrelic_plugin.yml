@@ -1,18 +1,18 @@
 # Please make sure to update the license_key information with the license key for your New Relic
 # account.
 #
-# This configuration file holds examples for all plugins. You only need to uncomment 
+# This configuration file holds examples for all plugins. You only need to uncomment
 # the lines for the product you are using.
 #
 # Example configuration is shown below. Uncomment (remove #) the needed lines for
-# your environment. 
+# your environment.
 #
 #
 newrelic:
   #
   # Update with your New Relic account license key:
   #
-  license_key: 'YOUR_LICENSE_KEY_HERE'
+  license_key: <%= ENV['NEWRELIC_LICENSE_KEY'] %>
   #
   # Set to '1' for verbose output, remove for normal output.
   # All output goes to stdout/stderr.
@@ -22,17 +22,17 @@ newrelic:
 # Agent Configuration:
 #
 agents:
-# 
+#
 # NOTE: You must uncomment and configure the plugins you want to use. By default they are
 # all disabled.
-# 
+#
 # Configuration for RabbitMQ
   rabbitmq:
     # Must enable rabbit management plugin
     # Note: When monitoring multiple nodes you should use the real hostnames instead of localhost
     # Uncomment the appropriate line for your version
     # RabbitMQ Default URL version 3.0
-    #management_api_url: http://guest:guest@localhost:15672
+    management_api_url: <%= ENV['RABBITMQ_MANGEMENT_URL'] %>
     # RabbitMQ Default URL versions prior to 3.0
     #management_api_url: http://guest:guest@localhost:55672
     #
@@ -59,15 +59,8 @@ agents:
 
 # Configuration for Redis
   redis:
-    # The - allows you to define multiple servers
-    #-
-      #hostname: localhost
-      #hostport: 6379
-      # Set "debug: true" to see metrics in stdout instead of sent to New Relic"
-      #debug: false
-      # Set "testrun: true" to use input from local text/html files. Only parses input once, then quits.
-      #testrun: false
-    #-
+      # hostname: <%= ENV['REDIS_HOST'] %>
+      # hostport: <%= ENV['REDIS_PORT'] %>
       #hostname: localhost
       #hostport: 6389
       # Set "debug: true" to see metrics in stdout instead of sent to New Relic"
